@@ -34,6 +34,7 @@
 		CE7861A52EC46622001DDD0E /* Chap12_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861A32EC46622001DDD0E /* Chap12_View.swift */; };
 		CE7861A92EC468CF001DDD0E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861A82EC468CF001DDD0E /* Item.swift */; };
 		CE7861AC2EC46DE6001DDD0E /* GradientBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861AA2EC46DE6001DDD0E /* GradientBackgroundStyle.swift */; };
+		CE7861AF2EC47EF8001DDD0E /* Chapter13-Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +80,7 @@
 		CE7861A32EC46622001DDD0E /* Chap12_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chap12_View.swift; sourceTree = "<group>"; };
 		CE7861A82EC468CF001DDD0E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CE7861AA2EC46DE6001DDD0E /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
+		CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chapter13-Restaurant.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 		CE7861AD2EC475BE001DDD0E /* Chapter13 */ = {
 			isa = PBXGroup;
 			children = (
+				CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */,
 			);
 			path = Chapter13;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7861AF2EC47EF8001DDD0E /* Chapter13-Restaurant.swift in Sources */,
 				CE7861822EC465E4001DDD0E /* CardFullSize.swift in Sources */,
 				CE7861922EC46612001DDD0E /* Restaurant.swift in Sources */,
 				CE7861932EC46612001DDD0E /* Chap10_ExcerciseView.swift in Sources */,

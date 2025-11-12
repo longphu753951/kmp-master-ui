@@ -37,5 +37,5 @@ struct RestaurantDetailView: View {
 
 @available(iOS 17, *)
 #Preview {
-    RestaurantDetailView(restaurant: Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location:"Hong Kong", image: "cafedeadend", isFavorite: false))
+    RestaurantDetailView(restaurant: Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", image: "cafedeadend", location:"Hong Kong", isFavorite: false))
 }
