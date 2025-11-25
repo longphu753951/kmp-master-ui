@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,8 @@
 		CE7861A92EC468CF001DDD0E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861A82EC468CF001DDD0E /* Item.swift */; };
 		CE7861AC2EC46DE6001DDD0E /* GradientBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861AA2EC46DE6001DDD0E /* GradientBackgroundStyle.swift */; };
 		CE7861AF2EC47EF8001DDD0E /* Chapter13-Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */; };
+		CEB3CD3E2ECD56FC00EB0CE0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3CD3D2ECD56FC00EB0CE0 /* SettingView.swift */; };
+		CEB3CD412ECDC62300EB0CE0 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3CD402ECDC62300EB0CE0 /* SettingStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,7 +83,13 @@
 		CE7861A82EC468CF001DDD0E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CE7861AA2EC46DE6001DDD0E /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chapter13-Restaurant.swift"; sourceTree = "<group>"; };
+		CEB3CD3D2ECD56FC00EB0CE0 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		CEB3CD402ECDC62300EB0CE0 /* SettingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CE93DF852ED41A50007A8267 /* Chapter15 */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Chapter15; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7555FF78242A565900829871 /* Frameworks */ = {
@@ -122,6 +130,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE93DF852ED41A50007A8267 /* Chapter15 */,
+				CEB3CD3F2ECDC58500EB0CE0 /* Chapter14 */,
 				CE7861AD2EC475BE001DDD0E /* Chapter13 */,
 				CE7861AB2EC46DE6001DDD0E /* style */,
 				CE7861A82EC468CF001DDD0E /* Item.swift */,
@@ -262,8 +272,17 @@
 			isa = PBXGroup;
 			children = (
 				CE7861AE2EC47EF8001DDD0E /* Chapter13-Restaurant.swift */,
+				CEB3CD3D2ECD56FC00EB0CE0 /* SettingView.swift */,
 			);
 			path = Chapter13;
+			sourceTree = "<group>";
+		};
+		CEB3CD3F2ECDC58500EB0CE0 /* Chapter14 */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3CD402ECDC62300EB0CE0 /* SettingStore.swift */,
+			);
+			path = Chapter14;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +301,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CE93DF852ED41A50007A8267 /* Chapter15 */,
 			);
 			name = iosApp;
 			productName = iosApp;
@@ -378,7 +400,9 @@
 				CE7861A22EC4661A001DDD0E /* Chapter11.swift in Sources */,
 				CE7861862EC465E4001DDD0E /* Chapter9-Animation.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				CEB3CD412ECDC62300EB0CE0 /* SettingStore.swift in Sources */,
 				CE7861742EC465C4001DDD0E /* Chapter5-ScrollView.swift in Sources */,
+				CEB3CD3E2ECD56FC00EB0CE0 /* SettingView.swift in Sources */,
 				CE7861AC2EC46DE6001DDD0E /* GradientBackgroundStyle.swift in Sources */,
 				CE7861792EC465DC001DDD0E /* Chapter8-UnderstandingStateAndBuilding.swift in Sources */,
 				CE78617A2EC465DC001DDD0E /* Chapter8-PathAndShape.swift in Sources */,

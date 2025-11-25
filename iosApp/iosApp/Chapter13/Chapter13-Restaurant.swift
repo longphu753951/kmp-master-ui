@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct Chapter13_Restaurant: View {
+    @EnvironmentObject var settingStore: SettingStore
+    @State var isShowSettingSheet = false
     @State var restaurants = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", phone: "232-923423", image: "cafedeadend", priceLevel: 3),
         Restaurant(name: "Homei", type: "Cafe", phone: "348-233423", image: "homei", priceLevel: 3),
@@ -32,35 +34,81 @@ struct Chapter13_Restaurant: View {
         Restaurant(name: "Royal Oak", type: "British", phone: "343-988834", image: "royaloak", priceLevel: 2, isFavorite: true),
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", phone: "432-344050", image: "caskpubkitchen", priceLevel: 1)
         ]
+    
+    private func shouldShowItem(restaurant: Restaurant) -> Bool {
+        return (!self.settingStore.showCheckInOnly || restaurant.isCheckIn) && (
+            restaurant.priceLevel <= self.settingStore.maxPriceLevel
+        )
+    }
+    
+    
     @State var selectedRestaurant: Restaurant?
     var body: some View {
         NavigationStack {
             List {
-                ForEach(restaurants) { restaurant in
-                    HStack {
-                        Image("Restaurant/\(restaurant.image)")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(.circle)
-                            .padding(.horizontal, 4)
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(restaurant.name)
-                                    .fontWeight(.heavy)
-                                Text(String(repeating: "$", count: restaurant.priceLevel))
-                                    .font(.system(.subheadline))
-                                    .foregroundStyle(.secondary)
+                ForEach(restaurants.sorted(by: self.settingStore.displayOrder.predicate())) { restaurant in
+                    if self.shouldShowItem(restaurant: restaurant) {
+                        Restaurant_RowItem(restaurant: restaurant)
+                            .contextMenu {
+                                
                             }
-                            Text(restaurant.type)
-                            Text(restaurant.phone)
-                        }
                     }
                 }
-            }.navigationTitle("Restaurant")
+            }
+            .navigationTitle("Restaurant")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        self.isShowSettingSheet = true
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
+            .sheet(isPresented: $isShowSettingSheet) {
+                SettingView().environmentObject(self.settingStore)
+            }
+        }
+    }
+}
+
+struct Restaurant_RowItem: View {
+    @State var restaurant: Restaurant
+    var body: some View {
+        HStack {
+            Image("Restaurant/\(restaurant.image)")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(.circle)
+                .padding(.horizontal, 4)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(restaurant.name)
+                        .fontWeight(.heavy)
+                    Text(String(repeating: "$", count: restaurant.priceLevel))
+                        .font(.system(.subheadline))
+                        .foregroundStyle(.secondary)
+                }
+                Text(restaurant.type)
+                Text(restaurant.phone)
+                
+                
+            }
+            Spacer()
+            Image(systemName: "seal.fill")
+                .foregroundStyle(.red)
+                .overlay(
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .foregroundStyle(.white)
+                )
+            Image(systemName: "star.fill")
+                .foregroundStyle(.yellow)
         }
     }
 }
 
 #Preview {
-    Chapter13_Restaurant()
+    Chapter13_Restaurant().environmentObject(SettingStore())
 }

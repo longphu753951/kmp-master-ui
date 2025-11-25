@@ -16,10 +16,11 @@ struct iOSApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    var settingStore = SettingStore()
 
     var body: some Scene {
         WindowGroup {
-            Chapter10()
+            Chapter13_Restaurant().environmentObject(self.settingStore)
         }
         .modelContainer(sharedModelContainer)
     }
